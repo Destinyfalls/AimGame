@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fzn-Ny-xDq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -11,19 +11,11 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="AimGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="AimGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6O-Ld-HIH">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkN-mr-a0Q">
                                 <rect key="frame" x="148.33333333333334" y="395" width="96.333333333333343" height="62"/>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
@@ -35,52 +27,154 @@
                                     <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tRw-Tj-WtA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-ic-EUw">
-                                <rect key="frame" x="124.00000000000001" y="59.000000000000007" width="145.33333333333337" height="25.333333333333336"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-ic-EUw">
+                                <rect key="frame" x="124.00000000000001" y="103" width="145.33333333333337" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-P3-Wga">
-                                <rect key="frame" x="191" y="84.333333333333329" width="11" height="25.333333333333329"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-P3-Wga">
+                                <rect key="frame" x="196.66666666666666" y="128.33333333333334" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVG-Bk-Jlo">
+                                <rect key="frame" x="158.66666666666666" y="792.66666666666663" width="76" height="25.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vTL-xL-ka5">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="OkN-mr-a0Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5jP-mc-ijE"/>
-                            <constraint firstItem="E6O-Ld-HIH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AjI-GB-kh7"/>
-                            <constraint firstItem="E6O-Ld-HIH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gha-wX-iOn"/>
-                            <constraint firstAttribute="bottom" secondItem="E6O-Ld-HIH" secondAttribute="bottom" id="TcC-EL-8Ls"/>
+                            <constraint firstItem="vTL-xL-ka5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NG4-b4-ron"/>
+                            <constraint firstItem="vTL-xL-ka5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QwJ-M9-etz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CVG-Bk-Jlo" secondAttribute="bottom" id="V1R-P5-R27"/>
                             <constraint firstItem="cAW-P3-Wga" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aOd-ah-ltT"/>
                             <constraint firstItem="I2h-ic-EUw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="cAP-rM-OPP"/>
                             <constraint firstItem="OkN-mr-a0Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e0v-F0-pws"/>
                             <constraint firstItem="I2h-ic-EUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lQ0-HL-nZh"/>
-                            <constraint firstItem="E6O-Ld-HIH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvN-iK-3Yl"/>
+                            <constraint firstItem="CVG-Bk-Jlo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mBW-Cd-TWc"/>
                             <constraint firstItem="cAW-P3-Wga" firstAttribute="top" secondItem="I2h-ic-EUw" secondAttribute="bottom" id="wTc-ug-B3e"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="V73-1b-5Ez"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="vTL-xL-ka5" id="oLS-YC-pi0"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="8Pr-yc-lau"/>
                         <outlet property="playButton" destination="OkN-mr-a0Q" id="kaZ-fL-rNV"/>
+                        <outlet property="scoreLabel" destination="CVG-Bk-Jlo" id="tIx-eU-rxJ"/>
                         <outlet property="timeLabel" destination="cAW-P3-Wga" id="m0x-SU-7EY"/>
-                        <outlet property="webView" destination="E6O-Ld-HIH" id="yKZ-jT-hEM"/>
+                        <outlet property="timeTextLabel" destination="I2h-ic-EUw" id="h2x-Tj-rTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="3753.4351145038167" y="-2.1126760563380285"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="rkM-gU-IEs">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="w0o-ed-QGB" customClass="WebViewController" customModule="AimGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jwg-TH-J8Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pl-8C-7tb">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cp9-DO-8x9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3pl-8C-7tb" firstAttribute="leading" secondItem="Cp9-DO-8x9" secondAttribute="leading" id="5iH-HY-902"/>
+                            <constraint firstItem="3pl-8C-7tb" firstAttribute="trailing" secondItem="Cp9-DO-8x9" secondAttribute="trailing" id="WUP-ab-hRk"/>
+                            <constraint firstAttribute="bottom" secondItem="3pl-8C-7tb" secondAttribute="bottom" id="hlG-WZ-gzq"/>
+                            <constraint firstItem="3pl-8C-7tb" firstAttribute="top" secondItem="jwg-TH-J8Z" secondAttribute="top" id="i9B-NZ-UYK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="3pl-8C-7tb" id="1d3-Gm-hNz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njq-yu-0Ay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4646.5648854961828" y="2.8169014084507045"/>
+        </scene>
+        <!--Rules View Controller-->
+        <scene sceneID="x8O-ND-z9O">
+            <objects>
+                <viewController storyboardIdentifier="RulesViewController" id="rfT-WF-2Sx" customClass="RulesViewController" customModule="AimGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ghB-9k-Rkx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oON-fE-41I">
+                                <rect key="frame" x="50" y="330" width="293" height="192"/>
+                                <string key="text">After touching the aim it moves to another random position. Game finishes when you press the aim 10 times. You win if you do it faster than 7 seconds. You lose if you are slower.</string>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZRc-ba-Q5g"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="oON-fE-41I" firstAttribute="leading" secondItem="ghB-9k-Rkx" secondAttribute="leading" constant="50" id="8fY-hy-2qZ"/>
+                            <constraint firstItem="oON-fE-41I" firstAttribute="centerX" secondItem="ghB-9k-Rkx" secondAttribute="centerX" id="XgB-xt-IdZ"/>
+                            <constraint firstItem="oON-fE-41I" firstAttribute="centerY" secondItem="ghB-9k-Rkx" secondAttribute="centerY" id="hwC-UI-mQJ"/>
+                            <constraint firstAttribute="trailing" secondItem="oON-fE-41I" secondAttribute="trailing" constant="50" id="ssp-ON-QG2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ds8-My-arF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bik-v1-Awp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5605.3435114503818" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Njg-H3-R2b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fzn-Ny-xDq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fy6-dM-mik">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uro-aQ-i6I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HC3-wB-wOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2826.7175572519081" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
